@@ -1,0 +1,534 @@
+/* Public welcome screen background and poster collage. */
+
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #080809;
+  color: #f5f5f5;
+}
+
+.landing-backdrop {
+  position: absolute;
+  inset: 0 0 auto;
+  height: min(920px, 100vh);
+  overflow: hidden;
+  background: #101014;
+}
+
+.landing-poster-wall {
+  position: absolute;
+  top: -170px;
+  left: -5%;
+  display: grid;
+  width: 110%;
+  height: 920px;
+  grid-template-columns: repeat(8, minmax(150px, 1fr));
+  gap: 15px;
+  transform: rotate(-7deg) scale(1.08);
+  opacity: .68;
+}
+
+.landing-poster-wall img {
+  display: block;
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: saturate(.78);
+}
+
+.landing-poster-wall img:nth-child(2n) {
+  margin-top: 66px;
+}
+
+.landing-poster-wall img:nth-child(3n) {
+  margin-top: 115px;
+}
+
+.landing-poster-wall img:nth-child(4n) {
+  margin-top: 28px;
+}
+
+.landing-vignette {
+  position: absolute;
+  inset: 0 0 auto;
+  height: min(920px, 100vh);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, .58) 0%,
+      rgba(0, 0, 0, .53) 36%,
+      #080809 96%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .68),
+      transparent 45%,
+      rgba(0, 0, 0, .48)
+    );
+}
+
+/* Landing-page brand, language selector, and sign-in button. */
+
+.landing-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 0 clamp(24px, 6vw, 88px);
+}
+
+.landing-header .brand {
+  color: #e50914;
+  font-size: clamp(27px, 3vw, 38px);
+  letter-spacing: 2px;
+}
+
+.landing-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.landing-language select {
+  height: 34px;
+  padding: 0 26px 0 10px;
+  border: 1px solid #8c8c8c;
+  border-radius: 3px;
+  background: #09090bce;
+  color: #fff;
+  font-size: 12px;
+}
+
+.landing-sign-in, .landing-get-started, .auth-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 3px;
+  background: #e50914;
+  color: #fff;
+  font-weight: 700;
+  transition: background .18s, transform .18s;
+}
+
+.landing-sign-in {
+  min-height: 34px;
+  padding: 0 17px;
+  font-size: 12px;
+}
+
+.landing-sign-in:hover, .landing-get-started:hover, .auth-submit:hover:not(:disabled) {
+  background: #c90812;
+}
+
+/* Main call-to-action and supporting welcome-page content. */
+
+.landing-hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 690px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 130px;
+  text-align: center;
+}
+
+.landing-kicker {
+  margin-bottom: 18px;
+  color: #ff6269;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.landing-hero h1 {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(46px, 7vw, 86px);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -4px;
+  text-shadow: 0 3px 24px #000b;
+}
+
+.landing-intro {
+  max-width: 570px;
+  margin: 22px 0 27px;
+  color: #e0e0e3;
+  font-size: clamp(15px, 1.8vw, 19px);
+  line-height: 1.65;
+  text-shadow: 0 2px 10px #000;
+}
+
+.landing-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.landing-get-started {
+  min-height: 54px;
+  padding: 0 25px;
+  font-size: 16px;
+}
+
+.landing-cta>span {
+  color: #e1e1e2;
+  font-size: 12px;
+  text-shadow: 0 2px 8px #000;
+}
+
+.landing-scroll-cue {
+  position: absolute;
+  bottom: 42px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #aaa;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.landing-scroll-cue span {
+  width: 1px;
+  height: 24px;
+  background: #e50914;
+}
+
+/* Feature summary and footer sections below the main banner. */
+
+.landing-features {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 48px 35px 85px;
+  border-top: 1px solid #ffffff20;
+}
+
+.landing-features>div {
+  max-width: 310px;
+}
+
+.landing-feature-number {
+  color: #e50914;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.landing-features h2 {
+  margin: 12px 0 9px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  letter-spacing: -.4px;
+}
+
+.landing-features p {
+  margin: 0;
+  color: #9999a1;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.landing-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px clamp(24px, 6vw, 88px);
+  border-top: 1px solid #ffffff16;
+  color: #77777f;
+  font-size: 11px;
+}
+
+.landing-footer .brand {
+  color: #e50914;
+}
+
+/* Sign-up and sign-in dialog, forms, validation, and mode switch. */
+
+.auth-backdrop {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 22px;
+  background: #000b;
+  backdrop-filter: blur(8px);
+}
+
+.auth-panel {
+  position: relative;
+  width: min(100%, 430px);
+  padding: 38px 40px 30px;
+  border: 1px solid #ffffff20;
+  border-radius: 5px;
+  background: linear-gradient(155deg, #1b1b20, #101012 72%);
+  box-shadow: 0 28px 90px #000d;
+  animation: modal-in .2s ease-out;
+}
+
+.auth-panel>.brand {
+  color: #e50914;
+  font-size: 21px;
+}
+
+.auth-panel h2 {
+  margin: 27px 0 5px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 27px;
+  letter-spacing: -.8px;
+}
+
+.auth-panel>p {
+  margin: 0 0 24px;
+  color: #9999a2;
+  font-size: 13px;
+}
+
+.auth-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff0c;
+  color: #bbb;
+}
+
+.auth-close:hover {
+  background: #ffffff18;
+  color: #fff;
+}
+
+.auth-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-panel form label {
+  margin: 0 0 7px;
+  color: #b8b8be;
+  font-size: 11px;
+}
+
+.auth-panel form input {
+  height: 45px;
+  margin-bottom: 17px;
+  padding: 0 12px;
+  border: 1px solid #49494f;
+  border-radius: 3px;
+  outline: 0;
+  background: #0c0c0f;
+  color: #fff;
+  font-size: 13px;
+}
+
+.auth-panel form input:focus {
+  border-color: #eee;
+}
+
+.auth-panel form input::placeholder {
+  color: #65656d;
+}
+
+.auth-submit {
+  min-height: 45px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.auth-submit:disabled {
+  opacity: .65;
+}
+
+.auth-error {
+  margin: -5px 0 12px;
+  color: #ff8389;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.auth-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 23px;
+  color: #92929a;
+  font-size: 12px;
+}
+
+.auth-switch button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.auth-switch button:hover {
+  text-decoration: underline;
+}
+
+.auth-demo-note {
+  display: block;
+  margin-top: 21px;
+  padding-top: 16px;
+  border-top: 1px solid #ffffff14;
+  color: #6f6f77;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Sign-out control shown on the profile chooser. */
+
+.profiles-sign-out {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, .45);
+  border-radius: 0;
+  background: rgba(5, 5, 7, .3);
+  color: #fff;
+  font-size: 12px;
+}
+
+.profiles-sign-out:hover {
+  border-color: #fff;
+  background: #e50914;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive landing and authentication layouts. */
+
+@media(max-width:700px) {
+  .landing-header {
+    height: 72px;
+    padding: 0 20px;
+  }
+  .landing-header-actions {
+    gap: 8px;
+  }
+  .landing-language select {
+    max-width: 100px;
+  }
+  .landing-hero {
+    min-height: 620px;
+    padding: 32px 22px 110px;
+  }
+  .landing-hero h1 {
+    font-size: clamp(42px, 11vw, 68px);
+    letter-spacing: -2.5px;
+  }
+  .landing-intro {
+    max-width: 410px;
+    font-size: 15px;
+  }
+  .landing-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .landing-get-started {
+    min-height: 50px;
+  }
+  .landing-features {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 35px 25px 55px;
+  }
+  .landing-features>div {
+    max-width: 470px;
+  }
+  .landing-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 24px;
+  }
+  .landing-poster-wall {
+    left: -50%;
+    width: 200%;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    opacity: .56;
+  }
+  .landing-poster-wall img {
+    height: 320px;
+  }
+}
+
+@media(max-width:480px) {
+  .landing-header {
+    padding: 0 16px;
+  }
+  .landing-header .brand {
+    font-size: 25px;
+  }
+  .landing-sign-in {
+    padding: 0 12px;
+  }
+  .landing-language select {
+    height: 32px;
+    max-width: 85px;
+    padding-left: 7px;
+  }
+  .landing-hero {
+    min-height: 580px;
+  }
+  .landing-kicker {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  .landing-intro {
+    font-size: 14px;
+  }
+  .auth-backdrop {
+    padding: 12px;
+  }
+  .auth-panel {
+    padding: 32px 23px 24px;
+  }
+  .auth-panel h2 {
+    font-size: 24px;
+  }
+}
+
+/* Reduce decorative motion for accessibility preferences. */
+
+@media(prefers-reduced-motion:reduce) {
+  .landing-page * {
+    scroll-behavior: auto!important;
+    animation-duration: .01ms!important;
+    transition-duration: .01ms!important;
+  }
+}
